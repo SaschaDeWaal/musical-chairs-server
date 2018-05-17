@@ -13,7 +13,7 @@ To run the server do `npm start`
 
 ## Main Todo list
 
-- [ ] Add unit testing to project
+- [x] Add unit testing to project (https://mochajs.org/)
 - [ ] Add minimize to project (build option) https://www.npmjs.com/package/minimize
 - [ ] Players can join and leave a room
 - [ ] A room is started when there are enough people and the master user gives the starts commando

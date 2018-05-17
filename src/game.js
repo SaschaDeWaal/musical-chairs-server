@@ -7,6 +7,7 @@ const states = {
 
 class Game {
    constructor(name){
+      this.name = name;
       this.state = states.waitingOnPlayers;
       this.chairs = 0;
      
@@ -17,14 +18,14 @@ class Game {
   openToJoin() {
     return this.state === states.waitingOnPlayers;
   }
+
+  canStartGame() {
+     return (this.players.length >= 2 && this.state == states.waitingOnPlayers);
+  }
   
   addPlayer(player, socket) {
       this.players.push(player);
       this.sockets[player.id] = socket;
-    
-      if(this.players.lenght == 2){
-        this.startGame();
-      }
     
       socket.on ('positionUpdate', function (data) {
         player.x = data.x;
@@ -36,13 +37,17 @@ class Game {
   }
   
   startGame() {
-    this.state = states.playing;
-    this.broadcast('gameStarted', {});
-    this.chairs = this.players.lenght;
+     if (this.canStartGame()) {
+       this.state = states.playing;
+       this.broadcast('gameStarted', {});
+       this.chairs = this.players.length;
+       return true;
+     }
+     return false;
   }
   
   update() {
-     if (this.state === states.playing){
+     if (this.state === states.musicTime){
          this.updateGame();
      }
   }
