@@ -4,7 +4,8 @@
   "description": "this is the server of musical chairs but then better",
   "scripts": {
     "start": "node src/server.js",
-    "test": "mocha"
+    "test": "mocha",
+    "build": "node minify/minify.js"
   },
   "dependencies": {
     "express": "^4.16.3",
@@ -23,6 +24,7 @@
     "express"
   ],
   "devDependencies": {
-    "mocha": "^5.1.1"
+    "mocha": "^5.1.1",
+    "node-minify": "^2.4.2"
   }
 }
