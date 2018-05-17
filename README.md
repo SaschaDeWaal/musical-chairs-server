@@ -13,8 +13,8 @@ To run the server do `npm start`
 
 ## Main Todo list
 
-- [x] Add unit testing to project (https://mochajs.org/)
-- [ ] Add minimize to project (build option) https://www.npmjs.com/package/minimize
+- [x] Add unit testing to project
+- [x] Add minimize to project (build option) https://www.npmjs.com/package/minimize
 - [ ] Players can join and leave a room
 - [ ] A room is started when there are enough people and the master user gives the starts commando
 - [ ] On random location of the room should be a chair. Chairs amount is the same as the players amount -1
